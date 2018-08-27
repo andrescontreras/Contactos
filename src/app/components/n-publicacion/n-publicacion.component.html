@@ -1,0 +1,23 @@
+<div class="container-fluid borde">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input name="name" [(ngModel)]="name" type="text" class="form-control" id="name" aria-describedby="texto" placeholder=" Name">
+      <small id="nameHelp" class="form-text text-muted">Name to save</small>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone number</label>
+      <input  name="phoneNumber" [(ngModel)]="phoneNumber" type="text" class="form-control" id="phoneNumber" aria-describedby="texto" placeholder=" Phone number">
+      <small id="phoneNumberHelp" class="form-text text-muted">Phone to save</small>
+    </div>
+
+    <div class="form-group">
+      <label for="note">Note</label>
+      <input  name="note" [(ngModel)]="note" type="text" class="form-control" id="note" aria-describedby="texto" placeholder=" Note">
+      <small id="noteHelp" class="form-text text-muted">Note to save</small>
+    </div>
+    
+    <button type="submit" (click)="submit()" class="btn btn-info mb-3">Submit</button>
+  </form>
+</div> 

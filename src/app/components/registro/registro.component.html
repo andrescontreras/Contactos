@@ -1,0 +1,115 @@
+<div class="container">
+    <h3 class="my-3">Resgistro de cuenta</h3>
+    <div id="DatosPersonales" class="borde">
+        <h4>Datos personales</h4>
+        <div class="form-group row">
+            <label for="nombres" class="col-3 col-form-label text-right">Nombres</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Apellidos" class="col-3 col-form-label text-right">Apellidos</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese sus apellidos" id="Apellidos">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Correo" class="col-3 col-form-label text-right">Correo</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="email" placeholder="bootstrap@example.com" id="Correot">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Telefono" class="col-3 col-form-label text-right">Telefono</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="Telefono">
+            </div>
+        </div>
+    </div>
+    <div id="DatosCuenta" class="borde">
+        <h4>Datos de cuenta</h4>
+        <div class="form-group row">
+            <label for="nombreUsuario" class="col-3 col-form-label text-right">Usuario</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Nombre de usuario" id="nombreUsuario">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Contraseña" class="col-3 col-form-label text-right">Contraseña</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="password" placeholder="Ingrese la contraseña" id="Contraseña">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ConfContraseña" class="col-3 col-form-label text-right">Confirmar contraseña</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="password" placeholder="Vuelva a escribir la contraseña" id="ConfContraseña">
+            </div>
+        </div>
+    </div>
+    <div id="Preferencias" class="borde">
+        <h4>Preferencias</h4>
+        <div class="form-group row">
+            <label for="Preferencias" class="col-3 col-form-label text-right">Tipo de preferencia</label>
+            <div class="col-9 col-lg-7">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                    <option selected>Choose...</option>
+                    <option value="1">Tipo uno</option>
+                    <option value="2">Tipo dos</option>
+                    <option value="3">Tipo tres</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Preferencias" class="col-3 col-form-label text-right">Preferencia</label>
+            <div class="col-9 col-lg-7">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                    <option selected>Choose...</option>
+                    <option value="1">Preferencia uno</option>
+                    <option value="2">Preferencia dos</option>
+                    <option value="3">Preferencia tres</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-right col-12 col-lg-10 my-2">
+            <button type="button" class="btn btn-info mx-1">Agregar</button>
+        </div>
+    </div>
+    <div id="Trabaja" class="borde">
+        <div class="custom-control custom-checkbox ml-5 mt-2 mb-2">
+            <input #trabaja type="checkbox" class="custom-control-input" id="customCheck1" [(ngModel)]="theCheckbox" (change)="toggleVisibility($event)">
+            <label class="custom-control-label" for="customCheck1">Actualmente trabaja en anguna organización</label>
+        </div>
+    </div>
+    <div *ngIf="marked" id="Organizaion" class="borde">
+        <h4>Datos de organización</h4>
+        <div class="form-group row">
+            <label for="nombreEmpr" class="col-3 col-form-label text-right">Nombre</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Sector" class="col-3 col-form-label text-right">Sector económico</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CorreoCorp" class="col-3 col-form-label text-right">Correo corporativo</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese su correo personal corporativo" id="CorreoCorp">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="TelefonoCorp" class="col-3 col-form-label text-right">Teléfono corporativo</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese su teléfono personal corporativo">
+            </div>
+        </div>
+    </div>
+    <div class="text-right col-12 my-2">
+        <button type="button"  class="btn btn-info mx-1">Registrarse</button>
+    </div>
+</div>

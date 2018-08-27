@@ -1,0 +1,32 @@
+<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+<button (click)="ban()">BANDERA</button>
+show = {{show}}
+<br>
+<div *ngIf="show" id="Organizaion" class="borde"><h4>Datos de organización</h4>
+<div class="form-group row">
+  <label for="nombreEmpr" class="col-3 col-form-label text-right">Nombre</label>
+  <div class="col-9 col-lg-7">
+    <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Sector" class="col-3 col-form-label text-right">Sector económico</label>
+  <div class="col-9 col-lg-7">
+    <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="CorreoCorp" class="col-3 col-form-label text-right">Correo corporativo</label>
+  <div class="col-9 col-lg-7">
+    <input class="form-control" type="text" placeholder="Ingrese su correo personal corporativo" id="CorreoCorp">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="TelefonoCorp" class="col-3 col-form-label text-right">Teléfono corporativo</label>
+  <div class="col-9 col-lg-7">
+    <input class="form-control" type="text" placeholder="Ingrese su teléfono personal corporativo">
+  </div>
+</div>
+</div>
+<div class="text-right col-12 col-lg-10 my-2">
+  <button type="button" class="btn btn-info mx-1">Registrarse</button></div>

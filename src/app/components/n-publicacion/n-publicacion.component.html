@@ -1,23 +1,57 @@
-<div class="container-fluid borde">
-  <form>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input name="name" [(ngModel)]="name" type="text" class="form-control" id="name" aria-describedby="texto" placeholder=" Name">
-      <small id="nameHelp" class="form-text text-muted">Name to save</small>
+<div class="container">
+<h3>Nueva publicación</h3>
+<div id="Preferencias" class="borde">
+    <h4>Datos generales</h4>
+    <div class="form-group row">
+        <label for="Preferencias" class="col-3 col-form-label text-right">Sector</label>
+        <div class="col-9 col-lg-7">
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <option selected>Choose...</option>
+                <option value="1">Sector uno</option>
+                <option value="2">Sector dos</option>
+                <option value="3">Sector tres</option>
+            </select>
+        </div>
     </div>
-
-    <div class="form-group">
-      <label for="phoneNumber">Phone number</label>
-      <input  name="phoneNumber" [(ngModel)]="phoneNumber" type="text" class="form-control" id="phoneNumber" aria-describedby="texto" placeholder=" Phone number">
-      <small id="phoneNumberHelp" class="form-text text-muted">Phone to save</small>
+    <div class="form-group row">
+        <label for="Preferencias" class="col-3 col-form-label text-right">Sub sector</label>
+        <div class="col-9 col-lg-7">
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <option selected>Choose...</option>
+                <option value="1">Sub-sector uno</option>
+                <option value="2">Sub-sector dos</option>
+                <option value="3">Sub-sector tres</option>
+            </select>
+        </div>
     </div>
-
-    <div class="form-group">
-      <label for="note">Note</label>
-      <input  name="note" [(ngModel)]="note" type="text" class="form-control" id="note" aria-describedby="texto" placeholder=" Note">
-      <small id="noteHelp" class="form-text text-muted">Note to save</small>
+    <div class="form-group row">
+        <label for="nombres" class="col-3 col-form-label text-right">Empresa</label>
+        <div class="col-9 col-lg-7">
+            <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
+        </div>
+    </div>
+</div>
+<div id="DatosPersonales" class="borde">
+    <h4>Datos especificos</h4>
+    <div class="form-group row">
+        <label for="nombres" class="col-3 col-form-label text-right">Nombre del contacto</label>
+        <div class="col-9 col-lg-7">
+            <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="Preferencias" class="col-3 col-form-label text-right">Cargo</label>
+        <div class="col-9 col-lg-7">
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <option selected>Choose...</option>
+                <option value="1">Cargo uno</option>
+                <option value="2">Cargo dos</option>
+                <option value="3">Cargo tres</option>
+            </select>
+        </div>
     </div>
     
-    <button type="submit" (click)="submit()" class="btn btn-info mb-3">Submit</button>
-  </form>
-</div> 
+</div>
+
+</div>
+

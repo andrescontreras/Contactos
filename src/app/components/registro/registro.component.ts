@@ -9,14 +9,20 @@ export class RegistroComponent implements OnInit {
 
   constructor() { }
   name = 'Angular 6';
-  marked = false;
-  theCheckbox = false;
+  marked1 = false;
+  marked2 = false;
+  theCheckbox1 = false;
+  theCheckbox2 = false;
 
   ngOnInit() {
   }
 
-  toggleVisibility(e) {
-    this.marked = e.target.checked;
+  toggleVisibility1(e) {
+    this.marked1 = e.target.checked;
+  }
+
+  toggleVisibility2(e) {
+    this.marked2 = e.target.checked;
   }
 
 

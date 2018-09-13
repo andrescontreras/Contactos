@@ -68,19 +68,26 @@
             <button type="button" class="btn btn-info mx-1">Agregar</button>
         </div>
     </div>
+
+    
     <div class="borde container">
         <div class="row">
+            
         <div id="Trabaja" class="col-6 ">
-            <div class="custom-control custom-checkbox ml-5 mt-2 mb-2">
-                <input #trabaja type="checkbox" class="custom-control-input" id="customCheck1" [(ngModel)]="theCheckbox1" (change)="toggleVisibility1($event)">
-                <label class="custom-control-label" for="customCheck1">Actualmente trabaja en anguna organización</label>
+           
+            <div class="form-check custom-control custom-checkbox ml-5 mt-2 mb-2">
+                <label class="label1">
+                    <input #trabaja type="radio" name="radio" (change)="valor1()"> <span class="label-text">¿Actualmente trabaja en anguna organización?</span>
+                </label>
             </div>
         </div>
 
         <div id="Trabaja" class="col-6 ">
-            <div class="custom-control custom-checkbox ml-5 mt-2 mb-2">
-                <input #trabaja type="checkbox" class="custom-control-input" id="customCheck2" [(ngModel)]="theCheckbox2" (change)="toggleVisibility2($event)">
-                <label class="custom-control-label" for="customCheck2"> Es dependiente o empleador</label>
+           
+            <div class="form-check custom-control custom-checkbox ml-5 mt-2 mb-2">
+                <label class="label1">
+                    <input type="radio" name="radio" (change)="valor2()"> <span class="label-text">¿Es independiente o empleador?</span>
+                </label>
             </div>
         </div>
     </div>

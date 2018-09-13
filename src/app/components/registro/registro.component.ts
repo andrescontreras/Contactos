@@ -15,14 +15,31 @@ export class RegistroComponent implements OnInit {
   theCheckbox2 = false;
 
   ngOnInit() {
+    
   }
 
+  valor1()
+  {
+    this.marked1 = true;
+    this.marked2 = !this.marked1;
+    
+  }
+  valor2()
+  {
+    this.marked2 = true;
+    this.marked1 = !this.marked2;
+    
+  }
   toggleVisibility1(e) {
     this.marked1 = e.target.checked;
+    this.marked2 = !this.marked1;
+    this.theCheckbox2 = false; 
   }
 
   toggleVisibility2(e) {
     this.marked2 = e.target.checked;
+    this.marked1 = !this.marked2;
+    this.theCheckbox1 = false; 
   }
 
 

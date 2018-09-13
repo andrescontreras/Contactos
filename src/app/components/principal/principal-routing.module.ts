@@ -30,7 +30,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   declarations: []
 })

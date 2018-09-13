@@ -17,16 +17,16 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'principal', component: PrincipalComponent,
-  children:[
-    { path: 'home', component: HomeComponent },
-    { path: 'cuenta', component: CuentaComponent },
-    { path: 'registro', component: RegistroComponent },
-    { path: 'nueva-publicacion', component: NPublicacionComponent },
-    { path: 'buscar', component: BuscarComponent },
-    { path: 'garantia', component: GarantiaComponent },
-    { path: '', component: HomeComponent, pathMatch: 'full' },
-    { path: '**', redirectTo: '/', pathMatch: 'full' },
-  ]
+    children:[
+      { path: 'home', component: HomeComponent },
+      { path: 'cuenta', component: CuentaComponent },
+      { path: 'registro', component: RegistroComponent },
+      { path: 'nueva-publicacion', component: NPublicacionComponent },
+      { path: 'buscar', component: BuscarComponent },
+      { path: 'garantia', component: GarantiaComponent },
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '**', redirectTo: '/principal', pathMatch: 'full' },
+    ]
   },
   
   { path: '', component: LoginComponent, pathMatch: 'full' },

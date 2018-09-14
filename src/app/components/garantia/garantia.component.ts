@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./garantia.component.css']
 })
 export class GarantiaComponent implements OnInit {
-
+  valor:string = "";
   constructor() { }
 
   ngOnInit() {

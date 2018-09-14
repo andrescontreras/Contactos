@@ -12,6 +12,15 @@ export class Contacto {
 
 }
 
+export class T_Contacto{
+    tipo: string;
+    contacto: string;
+    constructor(tipo: string, contacto: string) {
+        this.tipo = tipo;
+        this.contacto = contacto;
+        
+    }
+}
 export interface Contacto {
     name: string;
     phoneNumber: string;

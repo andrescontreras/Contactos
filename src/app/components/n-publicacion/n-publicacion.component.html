@@ -1,57 +1,127 @@
 <div class="container">
-<h3>Nueva publicación</h3>
-<div id="Preferencias" class="borde">
-    <h4>Datos generales</h4>
-    <div class="form-group row">
-        <label for="Preferencias" class="col-3 col-form-label text-right">Sector</label>
-        <div class="col-9 col-lg-7">
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                <option selected>Choose...</option>
-                <option value="1">Sector uno</option>
-                <option value="2">Sector dos</option>
-                <option value="3">Sector tres</option>
-            </select>
+    <h3>Nueva publicación</h3>
+    <input type="text" [(ngModel)]="contacto" class="form-control" id="inputPassword3" placeholder="Password">
+    <h1> ES:{{contacto}}</h1>
+    <div id="Preferencias" class="borde">
+        <h4>Datos generales</h4>
+        <div class="form-group row">
+            <label for="Preferencias" class="col-3 col-form-label text-right">Sector</label>
+            <div class="col-9 col-lg-7">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                    <option selected>Choose...</option>
+                    <option value="1">Sector uno</option>
+                    <option value="2">Sector dos</option>
+                    <option value="3">Sector tres</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Preferencias" class="col-3 col-form-label text-right">Sub sector</label>
+            <div class="col-9 col-lg-7">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                    <option selected>Choose...</option>
+                    <option value="1">Sub-sector uno</option>
+                    <option value="2">Sub-sector dos</option>
+                    <option value="3">Sub-sector tres</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nombres" class="col-3 col-form-label text-right">Empresa</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="empresa">
+            </div>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="Preferencias" class="col-3 col-form-label text-right">Sub sector</label>
-        <div class="col-9 col-lg-7">
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                <option selected>Choose...</option>
-                <option value="1">Sub-sector uno</option>
-                <option value="2">Sub-sector dos</option>
-                <option value="3">Sub-sector tres</option>
-            </select>
+    <div id="DatosPersonales" class="borde">
+        <h4>Datos especificos</h4>
+        <div class="form-group row">
+            <label for="nombres" class="col-3 col-form-label text-right">Nombre del contacto</label>
+            <div class="col-9 col-lg-7">
+                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombrecontacto">
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="nombres" class="col-3 col-form-label text-right">Empresa</label>
-        <div class="col-9 col-lg-7">
-            <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
+        <div class="form-group row">
+            <label for="Preferencias" class="col-3 col-form-label text-right">Cargo</label>
+            <div class="col-9 col-lg-7">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                    <option selected>Choose...</option>
+                    <option value="1">Cargo uno</option>
+                    <option value="2">Cargo dos</option>
+                    <option value="3">Cargo tres</option>
+                </select>
+            </div>
         </div>
-    </div>
-</div>
-<div id="DatosPersonales" class="borde">
-    <h4>Datos especificos</h4>
-    <div class="form-group row">
-        <label for="nombres" class="col-3 col-form-label text-right">Nombre del contacto</label>
-        <div class="col-9 col-lg-7">
-            <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="Preferencias" class="col-3 col-form-label text-right">Cargo</label>
-        <div class="col-9 col-lg-7">
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                <option selected>Choose...</option>
-                <option value="1">Cargo uno</option>
-                <option value="2">Cargo dos</option>
-                <option value="3">Cargo tres</option>
-            </select>
-        </div>
-    </div>
-    
-</div>
 
-</div>
-
+    </div>
+    <div class="container borde p-2">
+            <div class="row">
+              <div class="col-3 p-2  text-right">
+                Agregar formas de contacto
+              </div>
+              <div class="col-sm  p-2">
+                    <div class="material-switch pull-right ">
+                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" (change)="mostrarFormas()" >
+                            <label for="someSwitchOptionInfo" class="bg-info"></label>
+                        </div>
+              </div>
+            </div>
+            <div *ngIf="formasc">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis adipisci minus nulla minima illum ipsam suscipit itaque eos, at labore numquam esse odit quia tempora consequuntur repudiandae harum doloremque nobis.</p>
+                <div class="container">
+                        <div class="row">
+                          <div class="col">
+                                <form>
+                                        <div class="form-group row">
+                                          <label for="inputEmail3" class="col-sm-2 col-form-label">Tipo contacto</label>
+                                          <div class="col-sm-10">
+                                                <select  class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">Telefono fijo</option>
+                                                        <option value="2">Telefono movil</option>
+                                                        <option value="3">Correo</option>
+                                                    </select>
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                          <label for="inputPassword3" class="col-sm-2 col-form-label">Detalle</label>
+                                          <div class="col-sm-10">
+                                            <input type="text"  class="form-control" id="inputPassword3" placeholder="Password">
+                                            <h1> ES:{{contacto}}</h1>
+                                          </div>
+                                        </div>
+                                       
+                                        <div class="form-group row ">
+                                          <div class="col-12 text-right">
+                                            <button type="submit" (click)="addContacto()" class="btn btn-info">Agregar</button>
+                                          </div>
+                                        </div>
+                                      </form>
+                          </div>
+                          <div class="col">
+                                <table class="table table-sm">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col-2">Detalle</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let item of lista">
+                                            
+                                            <td class="b3">{{item.tipo}}</td>
+                                            <td class="b2">{{item.contacto}}</td>
+                                            <td class="b1"><i class="far pr-3 fa-trash-alt"></i>
+                                                <i class="fas fa-pencil-alt"></i></td>
+                                            
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                          </div>
+                        </div>
+                        
+                      </div>
+            </div>
+            
+          </div>
+   

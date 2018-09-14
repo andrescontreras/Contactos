@@ -1,7 +1,6 @@
 <div class="container">
     <h3>Nueva publicación</h3>
-    <input type="text" [(ngModel)]="contacto" class="form-control" id="inputPassword3" placeholder="Password">
-    <h1> ES:{{contacto}}</h1>
+
     <div id="Preferencias" class="borde">
         <h4>Datos generales</h4>
         <div class="form-group row">
@@ -55,73 +54,103 @@
 
     </div>
     <div class="container borde p-2">
-            <div class="row">
-              <div class="col-3 p-2  text-right">
+        <div class="row">
+            <div class="col-3 p-2  text-right">
                 Agregar formas de contacto
-              </div>
-              <div class="col-sm  p-2">
-                    <div class="material-switch pull-right ">
-                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" (change)="mostrarFormas()" >
-                            <label for="someSwitchOptionInfo" class="bg-info"></label>
-                        </div>
-              </div>
             </div>
-            <div *ngIf="formasc">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis adipisci minus nulla minima illum ipsam suscipit itaque eos, at labore numquam esse odit quia tempora consequuntur repudiandae harum doloremque nobis.</p>
-                <div class="container">
-                        <div class="row">
-                          <div class="col">
-                                <form>
-                                        <div class="form-group row">
-                                          <label for="inputEmail3" class="col-sm-2 col-form-label">Tipo contacto</label>
-                                          <div class="col-sm-10">
-                                                <select  class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                                                        <option selected>Choose...</option>
-                                                        <option value="1">Telefono fijo</option>
-                                                        <option value="2">Telefono movil</option>
-                                                        <option value="3">Correo</option>
-                                                    </select>
-                                          </div>
-                                        </div>
-                                        <div class="form-group row">
-                                          <label for="inputPassword3" class="col-sm-2 col-form-label">Detalle</label>
-                                          <div class="col-sm-10">
-                                            <input type="text"  class="form-control" id="inputPassword3" placeholder="Password">
-                                            <h1> ES:{{contacto}}</h1>
-                                          </div>
-                                        </div>
-                                       
-                                        <div class="form-group row ">
-                                          <div class="col-12 text-right">
-                                            <button type="submit" (click)="addContacto()" class="btn btn-info">Agregar</button>
-                                          </div>
-                                        </div>
-                                      </form>
-                          </div>
-                          <div class="col">
-                                <table class="table table-sm">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">Tipo</th>
-                                            <th scope="col-2">Detalle</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr *ngFor="let item of lista">
-                                            
-                                            <td class="b3">{{item.tipo}}</td>
-                                            <td class="b2">{{item.contacto}}</td>
-                                            <td class="b1"><i class="far pr-3 fa-trash-alt"></i>
-                                                <i class="fas fa-pencil-alt"></i></td>
-                                            
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                          </div>
-                        </div>
-                        
-                      </div>
+            <div class="col-sm  p-2">
+                <div class="material-switch pull-right ">
+                    <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" (change)="mostrarFormas()">
+                    <label for="someSwitchOptionInfo" class="bg-info"></label>
+                </div>
             </div>
-            
-          </div>
-   
+        </div>
+        <div *ngIf="formasc">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis adipisci minus nulla minima illum ipsam
+                suscipit itaque eos, at labore numquam esse odit quia tempora consequuntur repudiandae harum doloremque
+                nobis.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Tipo contacto</label>
+                                <div class="col-sm-10">
+                                    <select name="tcontacto" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias"
+                                        placeholder="seleccione uno" [(ngModel)]="tcontacto">
+                                        <option selected>Seleccione uno</option>
+                                        <option value="Telefono fijo">Telefono fijo</option>
+                                        <option value="Telefono movil">Telefono movil</option>
+                                        <option value="Correo">Correo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Detalle</label>
+                                <div class="col-sm-10">
+                                    <input type="text" [(ngModel)]="contacto" name="contacto" class="form-control" id="inputPassword3"
+                                        placeholder="número o email">
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <div class="col-12 text-right">
+                                    <button type="submit" (click)="addContacto()" class="btn btn-info">Agregar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col-2">Detalle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of lista ; let i = index">
+
+                                    <td class="">{{item.tipo}}</td>
+                                    <td class="">{{item.contacto}}</td>
+                                    <td class="">
+                                        <i (click)="editContacto(i)" data-toggle="modal" data-target="#EditModal" class="fas pr-3 fa-pencil-alt"></i>
+                                        <i (click)="deleteContacto(i)" class="far  fa-trash-alt"></i>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar: {{edittcontacto}}</h5>
+          <button #btnClose type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <form action="" (ngSubmit)="confirmEdit() ">
+                <input 
+                  type="text" 
+                  placeholder="Ingresa tu nombre" 
+                  name="name" 
+                  class="form-control"
+                  [(ngModel)]="editcontacto"
+                >
+                <button class="btn btn-info mt-3" type="submit" >Editar</button>
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </div>

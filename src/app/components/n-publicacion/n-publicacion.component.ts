@@ -61,7 +61,7 @@ export class NPublicacionComponent implements OnInit {
   deleteContacto(i)
   {
     console.log("contacto eliminado ES: ",i);
-    this.lista.splice(i)
+    this.lista.splice(i,1)
   }
   addContacto()
   {

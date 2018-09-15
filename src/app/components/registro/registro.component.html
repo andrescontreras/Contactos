@@ -6,26 +6,26 @@
         <div id="DatosPersonales" class="borde">
             <h4>Datos personales</h4>
             <div class="form-group row">
-                <label for="nombres" class="col-3 col-form-label text-right">Nombres</label>
-                <div class="col-9 col-lg-7">
+                <label for="nombres" class="col-auto col-sm-3 col-form-label text-right">Nombres</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombres">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Apellidos" class="col-3 col-form-label text-right">Apellidos</label>
-                <div class="col-9 col-lg-7">
+                <label for="Apellidos" class="col-auto col-sm-3 col-form-label text-right">Apellidos</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese sus apellidos" id="Apellidos">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Correo" class="col-3 col-form-label text-right">Correo</label>
-                <div class="col-9 col-lg-7">
+                <label for="Correo" class="col-auto col-sm-3 col-form-label text-right">Correo</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="email" placeholder="bootstrap@example.com" id="Correot">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Telefono" class="col-3 col-form-label text-right">Telefono</label>
-                <div class="col-9 col-lg-7">
+                <label for="Telefono" class="col-auto col-sm-3 col-form-label text-right">Telefono</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="Telefono">
                 </div>
             </div>
@@ -33,20 +33,20 @@
         <div id="DatosCuenta" class="borde">
             <h4>Datos de cuenta</h4>
             <div class="form-group row">
-                <label for="nombreUsuario" class="col-3 col-form-label text-right">Usuario</label>
-                <div class="col-9 col-lg-7">
+                <label for="nombreUsuario" class="col-auto col-sm-3 col-form-label text-right">Usuario</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Nombre de usuario" id="nombreUsuario">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Contraseña" class="col-3 col-form-label text-right">Contraseña</label>
-                <div class="col-9 col-lg-7">
+                <label for="Contraseña" class="col-auto col-sm-3 col-form-label text-right">Contraseña</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="password" placeholder="Ingrese la contraseña" id="Contraseña">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="ConfContraseña" class="col-3 col-form-label text-right">Confirmar contraseña</label>
-                <div class="col-9 col-lg-7">
+                <label for="ConfContraseña" class="col-auto col-sm-3 col-form-label text-right">Confirmar contraseña</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="password" placeholder="Vuelva a escribir la contraseña" id="ConfContraseña">
                 </div>
             </div>
@@ -55,8 +55,8 @@
             <h4>Preferencias</h4>
 
             <div class="form-group row">
-                <label for="Preferencias" class="col-3 col-form-label text-right">Tamaño empresa</label>
-                <div class="col-9 col-lg-7">
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
                         <option selected>Choose...</option>
                         <option value="1">Preferencia uno</option>
@@ -66,8 +66,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="Preferencias" class="col-3 col-form-label text-right">Sector</label>
-                    <div class="col-9 col-lg-7">
+                    <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
+                    <div class="col-11 col-sm-8 col-lg-7">
                         <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
                             <option selected>Choose...</option>
                             <option value="1">Preferencia uno</option>
@@ -77,8 +77,8 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                        <label for="Preferencias" class="col-3 col-form-label text-right">Ubicación</label>
-                        <div class="col-9 col-lg-7">
+                        <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Ubicación</label>
+                        <div class="col-11 col-sm-8 col-lg-7">
                             <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
                                 <option selected>Choose...</option>
                                 <option value="1">Preferencia uno</option>
@@ -96,9 +96,9 @@
         <div class="borde container">
             <div class="row">
 
-                <div id="Trabaja" class="col-6 ">
+                <div id="Trabaja" class="col-12 col-md-6 ">
 
-                    <div class="form-check custom-control custom-checkbox ml-5 mt-2 mb-2">
+                    <div class="form-check custom-control custom-checkbox  ml-md-5 mt-2 mb-2">
                         <label class="label1">
                             <input #trabaja type="radio" name="radio" (change)="valor1()"> <span class="label-text">¿Actualmente
                                 trabaja en anguna organización?</span>
@@ -106,9 +106,9 @@
                     </div>
                 </div>
 
-                <div id="Trabaja" class="col-6 ">
+                <div id="Trabaja" class="col-md-6 ">
 
-                    <div class="form-check custom-control custom-checkbox ml-5 mt-2 mb-2">
+                    <div class="form-check custom-control custom-checkbox ml-md-5 mt-2 mb-2">
                         <label class="label1">
                             <input type="radio" name="radio" (change)="valor2()"> <span class="label-text">¿Es
                                 independiente o empleador?</span>
@@ -121,14 +121,14 @@
         <div *ngIf="marked1" id="Organizaion" class="borde">
             <h4>Datos de organización</h4>
             <div class="form-group row">
-                <label for="nombreEmpr" class="col-3 col-form-label text-right">Nombre</label>
-                <div class="col-9 col-lg-7">
+                <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Nombre</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="Preferencias" class="col-3 col-form-label text-right">Tamaño empresa</label>
-                    <div class="col-9 col-lg-7">
+                    <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
+                    <div class="col-11 col-sm-8 col-lg-7">
                         <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
                             <option selected>Choose...</option>
                             <option value="1">Micro empresa</option>
@@ -139,26 +139,26 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                        <label for="nombreEmpr" class="col-3 col-form-label text-right">Nombre</label>
-                        <div class="col-9 col-lg-7">
+                        <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Nombre</label>
+                        <div class="col-11 col-sm-8 col-lg-7">
                             <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
                         </div>
                     </div>
             <div class="form-group row">
-                <label for="Sector" class="col-3 col-form-label text-right">Sector económico</label>
-                <div class="col-9 col-lg-7">
+                <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Sector económico</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="CorreoCorp" class="col-3 col-form-label text-right">Correo corporativo</label>
-                <div class="col-9 col-lg-7">
+                <label for="CorreoCorp" class="col-auto col-sm-3 col-form-label text-right">Correo corporativo</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese su correo personal corporativo" id="CorreoCorp">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="TelefonoCorp" class="col-3 col-form-label text-right">Teléfono corporativo</label>
-                <div class="col-9 col-lg-7">
+                <label for="TelefonoCorp" class="col-auto col-sm-3 col-form-label text-right">Teléfono corporativo</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese su teléfono personal corporativo">
                 </div>
             </div>
@@ -167,14 +167,14 @@
         <div *ngIf="marked2" id="Organizaion1" class="borde">
             <h4>Datos de dependiente o empleador</h4>
             <div class="form-group row">
-                <label for="nombreEmpr" class="col-3 col-form-label text-right">Nombre actividad</label>
-                <div class="col-9 col-lg-7">
+                <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Nombre actividad</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Sector" class="col-3 col-form-label text-right">Descripción</label>
-                <div class="col-9 col-lg-7">
+                <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Descripción</label>
+                <div class="col-11 col-sm-8 col-lg-7">
                     <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
                 </div>
             </div>

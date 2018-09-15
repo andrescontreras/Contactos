@@ -4,9 +4,10 @@
     <nav class="navbar navbar-light bg-light">
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        <button class="col-12 btn text-center col-sm-auto  btn-outline-info my-2 my-sm-0" type="submit">Search</button>
       </form>
     </nav>
+    <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -17,16 +18,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let pub of contactos; index as i">
-          <th scope="row">{{i+1}}</th>
-          <td>{{pub.name}}</td>
-          <td>{{pub.phoneNumber}}</td>
-          <td>{{pub.note}}</td>
+        <tr >
+          <th scope="row">1</th>
+          <td>adasdsfsdfasfsdfasdf</td>
+          <td>asdfsdfsfasdfasdfasdfasdfasdf</td>
+          <td>aasdfsdfasdfasdfasdf</td>
           <td><button class="btn btn-outline-info btn-sm" (click)="obtener(pub)">Detalle</button></td>
         </tr>
        
       </tbody>
     </table>
+  </div>
   </div>
   <div class="col">
 
@@ -34,26 +36,26 @@
       <h2 class="mx-3">Detalle de la publicación</h2>
       <div class="container mb-3">
         <div class="row">
-          <div class="col-3 "><div class="text-right">Sector:</div></div>
-          <div class="col ">{{detallePub.name}}</div>
+          <div class=" col-5 col-md-3 "><div class="text-right">Sector:</div></div>
+          <div class="col ">dasdfsdaf</div>
           <div class="w-100"></div>
-          <div class="col-3 "><div class="text-right">Empresa:</div></div>
-          <div class="col ">{{detallePub.phoneNumber}}</div>
+          <div class="col-5 col-md-3 "><div class="text-right">Empresa:</div></div>
+          <div class=" col ">asdfasdfasdf</div>
           <div class="w-100"></div>
-          <div class="col-3 "><div class="text-right">Cargo:</div></div>
-          <div class="col ">{{detallePub.note}}</div>
+          <div class=" col-5 col-md-3 "><div class="text-right">Cargo:</div></div>
+          <div class="col ">asdfasdfasdf</div>
           <div class="w-100"></div>
-          <div class="col-3 "><div class="text-right">Descripción:</div></div>
-          <div class="col ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium ab enim temporibus facere nemo natus sequi dolorum esse voluptatibus repellendus pariatur delectus iste eveniet, veniam consequuntur perspiciatis? Eveniet, aut.</div>
+          <div class="col-5 col-md-3 "><div class="text-right">Descripción:</div></div>
+          <div class="col-12 col-md pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium ab enim temporibus facere nemo natus sequi dolorum esse voluptatibus repellendus pariatur delectus iste eveniet, veniam consequuntur perspiciatis? Eveniet, aut.</div>
         </div>
       </div>
       
       
     </div>
     <div class="row borde pad">
-      <h2 class="mx-3">Motivo de la solicitud</h2>
+      <h2 class="mx-3 mb-3">Motivo de la solicitud</h2>
       <div class="input-group col-11 mx-auto mb-3 ">
-        <label class="bg-light text-dark col-3 rounded">Describa el motivo de la solicitud:</label>
+        <label class="bg-light text-dark col-12 col-md-5 rounded">Describa el motivo de la solicitud:</label>
         <textarea class="form-control" aria-label="With textarea"></textarea>
       </div>
       <div class="text-right col-12 my-2">

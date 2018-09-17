@@ -33,7 +33,7 @@
         </div>
     </div>
     <div id="DatosPersonales" class="borde">
-        <h4>Datos especificos</h4>
+        <h4>Datos específicos</h4>
         <div class="form-group row">
             <label for="nombres" class="col-auto col-sm-3 col-form-label text-right">Nombre del contacto</label>
             <div class="col-11 col-sm-8 col-lg-7">
@@ -66,9 +66,7 @@
             </div>
         </div>
         <div *ngIf="formasc">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis adipisci minus nulla minima illum ipsam
-                suscipit itaque eos, at labore numquam esse odit quia tempora consequuntur repudiandae harum doloremque
-                nobis.</p>
+            <p>A continuación deberá poner las formas de contacto que quiere publicar, especificando el tipo de contacto. De esta forma si el tipo de contacto es número de teléfono, en la parte de detalle deberá poner el numero o si el tipo de contacto es correo, en la parte de detalle deberá poner el correo.</p>
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -79,9 +77,9 @@
                                     <select name="tcontacto" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias"
                                         placeholder="seleccione uno" [(ngModel)]="tcontacto">
                                         <option selected>Seleccione uno</option>
-                                        <option value="Telefono fijo">Telefono fijo</option>
-                                        <option value="Telefono movil">Telefono movil</option>
-                                        <option value="Correo">Correo</option>
+                                        <option value="Teléfono fijo">Telefono fijo</option>
+                                        <option value="Teléfono móvil">Teléfono móvil</option>
+                                        <option value="Correo electrónico">Correo electrónico</option>
                                     </select>
                                 </div>
                             </div>
@@ -132,11 +130,6 @@
     </div>
     <div class="col-12 pb-3 text-right">
         <button type="submit" (click)="submit()" class="btn btn-info">Publicar</button>
-        <h4>{{Sector}}</h4>
-        <h4>{{SubSector}}</h4>
-        <h4>{{Empresa}}</h4>
-        <h4>{{NombreContacto}}</h4>
-        <h4>{{Cargo}}</h4>
     </div>
 </div>
 

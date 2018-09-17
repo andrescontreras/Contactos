@@ -30,9 +30,9 @@ export class NPublicacionComponent implements OnInit {
   Cargo:string = "Choose...";
   
   lista = [
-    new T_Contacto("Telefono movil", "5464654"),
-    new T_Contacto("Telefono movil", "11111"),
-    new T_Contacto("Telefono movil", "1111")
+    new T_Contacto("Teléfono móvil", "5464654"),
+    new T_Contacto("Teléfono móvil", "11111"),
+    new T_Contacto("Teléfono móvil", "01800042135")
   ];
 
   constructor(

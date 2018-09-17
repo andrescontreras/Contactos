@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class PublicacionService{
 
-  restItemsUrl = 'https://localhost:44368/api/publicacion';
+  restItemsUrl = 'http://afcserver.tk:8081/api/publicacion';
   restItems: Observable<Publicacion[]>;
   
   constructor(private http: HttpClient) { 

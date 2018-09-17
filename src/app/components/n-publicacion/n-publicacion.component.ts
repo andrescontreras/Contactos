@@ -3,7 +3,7 @@ import { ConstantPool } from '../../../../node_modules/@angular/compiler/src/con
 import { Contacto, T_Contacto } from '../../clases/contacto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PublicacionService } from '../../services/publicacion.service';
-
+import { Publicacion } from '../../clases/publicacion';
 
 @Component({
   selector: 'app-n-publicacion',
@@ -78,7 +78,9 @@ export class NPublicacionComponent implements OnInit {
 
   submit()
   {
-    
+    console.log("Entro al submit");
+    let pub = new Publicacion(this.Sector, this.SubSector, this.Empresa, this.NombreContacto, this.Cargo);
+    this.service.postObject(pub);
   }
 
   

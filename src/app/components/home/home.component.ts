@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionService } from '../../services/publicacion.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   show: boolean = true;
-  constructor() { }
+  public contactos =[];
+  constructor(private service:PublicacionService) { }
 
   ngOnInit() {
+    this.service.restItemsServiceGetRestItems()
+    .subscribe(data => this.contactos = data);
+    console.log("OnInit");
   }
 
   ban()

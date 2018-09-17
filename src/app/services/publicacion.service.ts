@@ -53,15 +53,15 @@ export class PublicacionService{
   }
 
   // POST
-  postObject1(contact:Contacto)
+  postObject1(contact:Publicacion)
   {
     console.log("ENTRO AL POST");
-    let answer = this.http.post<Contacto>(this.restItemsUrl,contact,httpOptions);
+    let answer = this.http.post<Publicacion>(this.restItemsUrl,contact,httpOptions);
     console.log(answer);
   }
 
 
-  postObject(contact: Contacto) {
+  postObject(contact: Publicacion) {
     console.log("ENTRO AL POST");
     this.http.post(this.restItemsUrl, contact, httpOptions).subscribe(
       res => {

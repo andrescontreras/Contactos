@@ -4,7 +4,7 @@
     <nav class="navbar navbar-light bg-light">
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="col-12 btn text-center col-sm-auto  btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        <button class="col-12 btn text-center col-sm-auto  btn-outline-info my-2 my-sm-0" type="submit" (click)="print()">Search</button>
       </form>
     </nav>
     <div class="table-responsive">
@@ -18,12 +18,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <th scope="row">1</th>
-          <td>adasdsfsdfasfsdfasdf</td>
-          <td>asdfsdfsfasdfasdfasdfasdfasdf</td>
-          <td>aasdfsdfasdfasdfasdf</td>
-          <td><button class="btn btn-outline-info btn-sm" >Detalle</button></td>
+        <tr *ngFor="let item of contactos; let i = index">
+          <th scope="row">{{i}}</th>
+          <td>{{item.sector}}</td>
+          <td>{{item.empresa}}</td>
+          <td>{{item.cargo}}</td>
+          <td><button class="btn btn-outline-info btn-sm" (click)="obtener(item)" >Detalle</button></td>
         </tr>
        
       </tbody>
@@ -37,13 +37,19 @@
       <div class="container mb-3">
         <div class="row">
           <div class=" col-5 col-md-3 "><div class="text-right">Sector:</div></div>
-          <div class="col ">dasdfsdaf</div>
+          <div class="col ">{{Sector}}</div>
           <div class="w-100"></div>
-          <div class="col-5 col-md-3 "><div class="text-right">Empresa:</div></div>
-          <div class=" col ">asdfasdfasdf</div>
+          <div class="col-5 col-md-3 "><div class="text-right">Sub-sector:</div></div>
+          <div class=" col ">{{SubSector}}</div>
+          <div class="w-100"></div>
+          <div class=" col-5 col-md-3 "><div class="text-right">Empresa:</div></div>
+          <div class="col ">{{Empresa}}</div>
+          <div class="w-100"></div>
+          <div class=" col-5 col-md-3 "><div class="text-right">Nombre contacto:</div></div>
+          <div class="col ">{{NombreContacto}}</div>
           <div class="w-100"></div>
           <div class=" col-5 col-md-3 "><div class="text-right">Cargo:</div></div>
-          <div class="col ">asdfasdfasdf</div>
+          <div class="col ">{{Cargo}}</div>
           <div class="w-100"></div>
           <div class="col-5 col-md-3 "><div class="text-right">Descripción:</div></div>
           <div class="col-12 col-md pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium ab enim temporibus facere nemo natus sequi dolorum esse voluptatibus repellendus pariatur delectus iste eveniet, veniam consequuntur perspiciatis? Eveniet, aut.</div>

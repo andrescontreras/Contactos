@@ -22,6 +22,12 @@ export class NPublicacionComponent implements OnInit {
   editcontacto:string = "";
   editIndex:number = -1;
   @ViewChild('btnClose') btnClose :ElementRef;
+
+  Sector:string = "Choose...";
+  SubSector:string = "Choose...";
+  NombreContacto:string;
+  Empresa:string;
+  Cargo:string = "Choose...";
   
   lista = [
     new T_Contacto("Telefono movil", "5464654"),

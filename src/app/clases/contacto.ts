@@ -22,8 +22,8 @@ export class T_Contacto{
     }
 }
 export interface Contacto {
-    name: string;
-    phoneNumber: string;
-    note: string;
+    Id :number;
+    TipoContacto: string;
+    Detalle: string;
     // comentario
 }

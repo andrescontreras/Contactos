@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from '../../../node_modules/rxjs';
 import { Contacto } from '../clases/contacto';
+import { Publicacion } from '../clases/publicacion';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,8 +19,8 @@ const httpOptions = {
 })
 export class PublicacionService{
 
-  restItemsUrl = 'http://afcserver.tk:8081/api/Contact';
-  restItems: Observable<Contacto[]>;
+  restItemsUrl = 'https://localhost:44368/api/publicacion';
+  restItems: Observable<Publicacion[]>;
   
   constructor(private http: HttpClient) { 
     
@@ -37,12 +38,13 @@ export class PublicacionService{
       console.log("FIN +++++++++++++++++++++++++++++++++");
       
   }*/
-  restItemsServiceGetRestItems(): Observable<Contacto[]>{
-    return this.http
-      .get<Contacto[]>(this.restItemsUrl);
-      //.pipe(map(data => data));
+
+  restItemsServiceGetRestItems(): Observable<Publicacion[]>{
+    
+     return this.http
+      .get<Publicacion[]>(this.restItemsUrl);
+     
   }
-  
   convertObject() {
     console.log("====================================");
     console.log(this.restItems);

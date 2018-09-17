@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Publicacion } from '../../clases/publicaciones';
+
 import { PublicacionService } from '../../services/publicacion.service'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -13,16 +13,17 @@ import { Contacto } from '../../clases/contacto';
 export class BuscarComponent implements OnInit {
 
   
-  p1 = new Publicacion('sector','empresa','cargo',true);
-  p2 = new Publicacion('sector2', 'empresa2', 'cargo2', true);
-  p3 = new Publicacion('sector3', 'empresa3', 'cargo3', true);
-  p4 = new Publicacion('sector4', 'empresa4', 'cargo4', true);
-  publicaciones: Publicacion[] = [this.p1, this.p2, this.p3, this.p4];
+  
   detallePub: Contacto = new Contacto('','','');
   public contactos =[];
+  Sector:string;
+  SubSector:string;
+  NombreContacto:string;
+  Empresa:string;
+  Cargo:string;
 
   constructor(private service:PublicacionService) {
-    console.log(this.publicaciones);
+    
     
     
    }
@@ -30,6 +31,8 @@ export class BuscarComponent implements OnInit {
   ngOnInit() {
     this.service.restItemsServiceGetRestItems()
     .subscribe(data => this.contactos = data);
+    console.log("OnInit");
+    
   }
   
 
@@ -42,10 +45,19 @@ export class BuscarComponent implements OnInit {
 
   }
 
+  print()
+  {
+    console.log(this.contactos);
+  }
+
   obtener(pub)
   {
     console.log("Boton de detalle");
     console.log(pub);
-    this.detallePub = pub;
+    this.Empresa = pub.empresa;
+    this.Cargo = pub.cargo;
+    this.Sector = pub.sector;
+    this.SubSector = pub.subSector;
+    this.NombreContacto = pub.nombreContacto;
   }
 }

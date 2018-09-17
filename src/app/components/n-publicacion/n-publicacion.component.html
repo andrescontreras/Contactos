@@ -6,29 +6,29 @@
         <div class="form-group row">
             <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
             <div class="col-11 col-sm-8 col-lg-7 ">
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="Sector" [(ngModel)] = "Sector">
                     <option selected>Choose...</option>
-                    <option value="1">Sector uno</option>
-                    <option value="2">Sector dos</option>
-                    <option value="3">Sector tres</option>
+                    <option value="Sector uno">Sector uno</option>
+                    <option value="Sector dos">Sector dos</option>
+                    <option value="Sector tres">Sector tres</option>
                 </select>
             </div>
         </div>
         <div class="form-group row">
             <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sub sector</label>
             <div class="col-11 col-sm-8 col-lg-7">
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="SubSector" [(ngModel)] ="SubSector">
                     <option selected>Choose...</option>
-                    <option value="1">Sub-sector uno</option>
-                    <option value="2">Sub-sector dos</option>
-                    <option value="3">Sub-sector tres</option>
+                    <option value="Sub-sector uno">Sub-sector uno</option>
+                    <option value="Sub-sector dos">Sub-sector dos</option>
+                    <option value="Sub-sector tres">Sub-sector tres</option>
                 </select>
             </div>
         </div>
         <div class="form-group row">
             <label for="nombres" class="col-auto col-sm-3 col-form-label text-right">Empresa</label>
             <div class="col-11 col-sm-8 col-lg-7">
-                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="empresa">
+                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="empresa" name="Empresa" [(ngModel)]="Empresa">
             </div>
         </div>
     </div>
@@ -37,17 +37,17 @@
         <div class="form-group row">
             <label for="nombres" class="col-auto col-sm-3 col-form-label text-right">Nombre del contacto</label>
             <div class="col-11 col-sm-8 col-lg-7">
-                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombrecontacto">
+                <input class="form-control" type="text" placeholder="Ingrese sus nombres" id="nombrecontacto" name="NombreContacto" [(ngModel)]="NombreContacto">
             </div>
         </div>
         <div class="form-group row">
             <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Cargo</label>
             <div class="col-11 col-sm-8 col-lg-7">
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="Cargo" [(ngModel)]="Cargo">
                     <option selected>Choose...</option>
-                    <option value="1">Cargo uno</option>
-                    <option value="2">Cargo dos</option>
-                    <option value="3">Cargo tres</option>
+                    <option value="Cargo uno">Cargo uno</option>
+                    <option value="Cargo dos">Cargo dos</option>
+                    <option value="Cargo tres">Cargo tres</option>
                 </select>
             </div>
         </div>
@@ -132,6 +132,11 @@
     </div>
     <div class="col-12 pb-3 text-right">
         <button type="submit" (click)="addContacto()" class="btn btn-info">Publicar</button>
+        <h4>{{Sector}}</h4>
+        <h4>{{SubSector}}</h4>
+        <h4>{{Empresa}}</h4>
+        <h4>{{NombreContacto}}</h4>
+        <h4>{{Cargo}}</h4>
     </div>
 </div>
 

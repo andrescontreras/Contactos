@@ -62,6 +62,29 @@ export class RegistroComponent implements OnInit {
     "  - etc",
   ];
 
+  cargos: string[] =
+  [
+    "Abogado",
+    "Administrador",
+    "	Analista Central de Presupuesto",
+    "Analista de Higiene y Seguridad Industrial",
+    "Analista de Presupuesto",
+    "Analista Financiero",
+    "Arquitecto",
+    "Auditor",
+    "Comprador",
+    "Contabilista",
+    "Coordinador",
+    "Dibujante",
+    "Dietista",
+    "Docente",
+    "Ecónomo",
+    "Especialista Organizacional",
+    "Ingeniero de Proyectos",
+    "Inspector de Seguridad Industrial e Higiene Ocupacional",
+    "	Jefe de Tesorería",
+  ]
+
   ngOnInit() {
     
   }

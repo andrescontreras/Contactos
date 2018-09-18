@@ -22,6 +22,7 @@ export class NPublicacionComponent implements OnInit {
   editcontacto:string = "";
   editIndex:number = -1;
   @ViewChild('btnClose') btnClose :ElementRef;
+  @ViewChild('btnPublicar') btnPublicar :ElementRef;
 
   Sector:string = "Choose...";
   SubSector:string = "Choose...";
@@ -34,6 +35,43 @@ export class NPublicacionComponent implements OnInit {
     new T_Contacto("Teléfono móvil", "11111"),
     new T_Contacto("Teléfono móvil", "01800042135")
   ];
+
+  sectores: string[] = 
+  ["Agricultura, ganadería, caza, silvicultura y pesca",
+  "Explotación de minas y canteras",
+  "Industrias manufactureras",
+  "	Construcción",
+  "	Transporte y almacenamiento",
+  "	Información y comunicaciones",
+  "Financiaro y de seguros",
+  "Inmobiliario",
+  "Educacion",
+  "Salud",
+  "Entretenimiento"
+  ];
+
+  cargos: string[] =
+  [
+    "Abogado",
+    "Administrador",
+    "	Analista Central de Presupuesto",
+    "Analista de Higiene y Seguridad Industrial",
+    "Analista de Presupuesto",
+    "Analista Financiero",
+    "Arquitecto",
+    "Auditor",
+    "Comprador",
+    "Contabilista",
+    "Coordinador",
+    "Dibujante",
+    "Dietista",
+    "Docente",
+    "Ecónomo",
+    "Especialista Organizacional",
+    "Ingeniero de Proyectos",
+    "Inspector de Seguridad Industrial e Higiene Ocupacional",
+    "	Jefe de Tesorería",
+  ]
 
   constructor(
     private service: PublicacionService ) {
@@ -64,6 +102,12 @@ export class NPublicacionComponent implements OnInit {
     this.btnClose.nativeElement.click();
   }
 
+  publicar()
+  {
+    
+    //this.submit();
+  }
+
   deleteContacto(i)
   {
     console.log("contacto eliminado ES: ",i);
@@ -81,6 +125,7 @@ export class NPublicacionComponent implements OnInit {
     console.log("Entro al submit");
     let pub = new Publicacion(this.Sector, this.SubSector, this.Empresa, this.NombreContacto, this.Cargo);
     this.service.postObject(pub);
+    this.btnPublicar.nativeElement.click();
   }
 
   

@@ -8,9 +8,7 @@
             <div class="col-11 col-sm-8 col-lg-7 ">
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="Sector" [(ngModel)] = "Sector">
                     <option selected>Choose...</option>
-                    <option value="Sector uno">Sector uno</option>
-                    <option value="Sector dos">Sector dos</option>
-                    <option value="Sector tres">Sector tres</option>
+                    <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
                 </select>
             </div>
         </div>
@@ -19,9 +17,7 @@
             <div class="col-11 col-sm-8 col-lg-7">
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="SubSector" [(ngModel)] ="SubSector">
                     <option selected>Choose...</option>
-                    <option value="Sub-sector uno">Sub-sector uno</option>
-                    <option value="Sub-sector dos">Sub-sector dos</option>
-                    <option value="Sub-sector tres">Sub-sector tres</option>
+                    <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
                 </select>
             </div>
         </div>
@@ -45,12 +41,18 @@
             <div class="col-11 col-sm-8 col-lg-7">
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias" name="Cargo" [(ngModel)]="Cargo">
                     <option selected>Choose...</option>
-                    <option value="Cargo uno">Cargo uno</option>
-                    <option value="Cargo dos">Cargo dos</option>
-                    <option value="Cargo tres">Cargo tres</option>
+                    <option *ngFor="let item of cargos" [value]="item">{{item}}</option>
                 </select>
             </div>
         </div>
+
+        <div class="form-group row">
+            <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Descripción</label>
+            <div class="input-group col-11 col-sm-8 col-lg-7">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+        </div>
+       
 
     </div>
     <div class="container borde p-2">
@@ -129,10 +131,12 @@
 
     </div>
     <div class="col-12 pb-3 text-right">
-        <button type="submit" (click)="submit()" class="btn btn-info">Publicar</button>
+        <button #btnPublicar type="submit" data-toggle="modal" data-target="#confirmPub" class="btn btn-info">Publicar</button>
     </div>
 </div>
 
+
+<!--MODAL EDITAR FORMAS CONTACTO-->
 <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -153,3 +157,25 @@
         </div>
     </div>
 </div>
+
+<!--MODAL CONFIRMAR PUBLICACION-->
+
+<div class="modal fade" id="confirmPub" aria-labelledby="confirmPub" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Estado de la publicación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Los datos registrados has sido guardados y publicados correctamente</p>
+        </div>
+        <div class="modal-footer">
+          <button #btnPublicar type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" (click)="submit()"  class="btn btn-info">Terminar registro</button>
+        </div>
+      </div>
+    </div>
+  </div>

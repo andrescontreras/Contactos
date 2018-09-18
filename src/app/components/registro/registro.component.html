@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="Preferencias" class="borde">
             <h4>Preferencias</h4>
 
@@ -51,36 +51,31 @@
                 <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
                         <option selected>Choose...</option>
-                        <option value="1">Preferencia uno</option>
-                        <option value="2">Preferencia dos</option>
-                        <option value="3">Preferencia tres</option>
+                        <option value="1">Micro empresa</option>
+                        <option value="2">Pequeña empresa</option>
+                        <option value="3">Mediana empresa</option>
+                        <option value="4">Gran empresa</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
-                    <div class="col-11 col-sm-8 col-lg-7">
-                        <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                            <option selected>Choose...</option>
-                            <option value="1">Preferencia uno</option>
-                            <option value="2">Preferencia dos</option>
-                            <option value="3">Preferencia tres</option>
-                        </select>
-                    </div>
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
+                <div class="col-11 col-sm-8 col-lg-7">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                        <option selected>Choose...</option>
+                        <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
+                        
+                    </select>
                 </div>
-                <div class="form-group row">
-                        <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Ubicación</label>
-                        <div class="col-11 col-sm-8 col-lg-7">
-                            <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                                <option selected>Choose...</option>
-                                <option value="1">Preferencia uno</option>
-                                <option value="2">Preferencia dos</option>
-                                <option value="3">Preferencia tres</option>
-                            </select>
-                        </div>
-                    </div>
-            <div class="text-right col-12 col-lg-10 my-2">
-                <button type="button" class="btn btn-info mx-1">Agregar</button>
+            </div>
+            <div class="form-group row">
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Ubicación</label>
+                <div class="col-11 col-sm-8 col-lg-7">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                        <option selected>Choose...</option>
+                        <option *ngFor="let item of ubicaciones" [value]="item">{{item}}</option>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -119,29 +114,34 @@
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
-                    <div class="col-11 col-sm-8 col-lg-7">
-                        <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                            <option selected>Choose...</option>
-                            <option value="1">Micro empresa</option>
-                            <option value="2">Pequeña empresa</option>
-                            <option value="3">Mediana empresa</option>
-                            <option value="4">Gran empresa</option>
-                        </select>
-                    </div>
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
+                <div class="col-11 col-sm-8 col-lg-7">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                        <option selected>Choose...</option>
+                        <option value="1">Micro empresa</option>
+                        <option value="2">Pequeña empresa</option>
+                        <option value="3">Mediana empresa</option>
+                        <option value="4">Gran empresa</option>
+                    </select>
                 </div>
-                <div class="form-group row">
-                        <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Nombre</label>
-                        <div class="col-11 col-sm-8 col-lg-7">
-                            <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
-                        </div>
-                    </div>
+            </div>
+            <div class="form-group row">
+                <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Cargo en la empresa</label>
+                <div class="col-11 col-sm-8 col-lg-7">
+                    <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
+                </div>
+            </div>
             <div class="form-group row">
                 <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Sector económico</label>
                 <div class="col-11 col-sm-8 col-lg-7">
-                    <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
+                        <option selected>Choose...</option>
+                        <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
+                        
+                    </select>
                 </div>
             </div>
+            
             <div class="form-group row">
                 <label for="CorreoCorp" class="col-auto col-sm-3 col-form-label text-right">Correo corporativo</label>
                 <div class="col-11 col-sm-8 col-lg-7">
@@ -166,17 +166,38 @@
             </div>
             <div class="form-group row">
                 <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Descripción</label>
-                <div class="col-11 col-sm-8 col-lg-7">
-                    <input class="form-control" type="text" placeholder="Ingrese el sector economico" id="Sector">
-                </div>
+                <div class="input-groupcol-11 col-sm-8 col-lg-7 ">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
             </div>
 
         </div>
 
         <div class="text-right col-12 my-2">
-            <button type="button" routerLink="/principal/" class="btn btn-info mx-1">Registrarse</button>
-            <button type="button" routerLink="/login/" class="btn btn-info mx-1">Volver a inicio</button>
+            <button type="button"  class="btn btn-info mx-1" data-toggle="modal" data-target="#confirmacion">Registrarse</button>
+            <button type="button" routerLink="/login/" class="btn btn-info mx-1">Cancelar</button>
         </div>
     </form>
     <app-footer></app-footer>
 </div>
+
+<!-- modal -->
+<div class="modal" id="confirmacion" aria-labelledby="confirmacion" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Estado del registro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Sus datos de cuenta has sido guardados correctamente, ya puede iniciar sesión en el portal</p>
+        </div>
+        <div class="modal-footer">
+          <button #btnClose type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" (click)="terminar()" routerLink="/principal/" class="btn btn-info">Terminar registro</button>
+        </div>
+      </div>
+    </div>
+  </div>

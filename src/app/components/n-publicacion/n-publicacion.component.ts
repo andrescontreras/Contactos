@@ -29,6 +29,7 @@ export class NPublicacionComponent implements OnInit {
   NombreContacto:string;
   Empresa:string;
   Cargo:string = "Choose...";
+  Descripcion: string = "";
   
   lista = [
     new T_Contacto("Teléfono móvil", "5464654"),
@@ -123,7 +124,7 @@ export class NPublicacionComponent implements OnInit {
   submit()
   {
     console.log("Entro al submit");
-    let pub = new Publicacion(this.Sector, this.SubSector, this.Empresa, this.NombreContacto, this.Cargo);
+    let pub = new Publicacion(this.Sector, this.SubSector, this.Empresa, this.NombreContacto,this.Descripcion ,this.Cargo);
     this.service.postObject(pub);
     this.btnPublicar.nativeElement.click();
   }

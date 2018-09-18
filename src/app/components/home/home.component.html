@@ -23,7 +23,7 @@
             <td>{{item.sector}}</td>
             <td>{{item.empresa}}</td>
             <td>{{item.cargo}}</td>
-            <td><button class="btn btn-outline-info btn-sm" (click)="obtener(item)" >Detalle</button></td>
+            <td><a routerLink="/principal/buscar" ><button class="btn btn-outline-info btn-sm" >Detalle</button></a></td>
           </tr>
         </tbody>
       </table>
@@ -49,14 +49,19 @@
           <div class="col ">6</div>
           <div class="w-100"></div>
           <div class="col-8 col-md-5 ">
-            <div class="text-right">Garantías solucionadas:</div>
+            <div class="text-right">Garantias recibidas:</div>
+            </div>
+            <div class="col ">30</div>
+            <div class="w-100"></div>
+          <div class="col-8 col-md-5 ">
+          <div class="text-right">Garantías solucionadas:</div>
           </div>
-          <div class="col ">15, 50%</div>
+          <div class="col ">15, equivale a: 50%</div>
           <div class="w-100"></div>
           <div class="col-8 col-md-5 ">
             <div class="text-right">Garantías aprobadas:</div>
           </div>
-          <div class="col ">15, 50%</div>
+          <div class="col ">15, equivale a: 50%</div>
           <div class="w-100"></div>
           <div class="col-8 col-md-5 ">
             <div class="text-right">Reportes negativos:</div>

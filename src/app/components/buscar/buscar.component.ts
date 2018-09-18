@@ -21,6 +21,7 @@ export class BuscarComponent implements OnInit {
   NombreContacto:string;
   Empresa:string;
   Cargo:string;
+  Descripcion:string;
 
   constructor(private service:PublicacionService) {
     
@@ -59,5 +60,6 @@ export class BuscarComponent implements OnInit {
     this.Sector = pub.sector;
     this.SubSector = pub.subSector;
     this.NombreContacto = pub.nombreContacto;
+    this.Descripcion = pub.descripcion;
   }
 }

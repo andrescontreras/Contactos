@@ -46,7 +46,7 @@ export class NPublicacionComponent implements OnInit {
   "	Información y comunicaciones",
   "Financiaro y de seguros",
   "Inmobiliario",
-  "Educacion",
+  "Educación",
   "Salud",
   "Entretenimiento"
   ];

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="bg-info text-white py-4">
-        <h3 class="my-3">Resgistro de cuenta</h3>
+        <h3 class="my-3 ml-3">Registro de cuenta</h3>
     </div>
     <form action="">
         <div id="DatosPersonales" class="borde">
@@ -46,37 +46,89 @@
         <div id="Preferencias" class="borde">
             <h4>Preferencias</h4>
 
-            <div class="form-group row">
-                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
+            <div class="form-group row b1">
+                <label for="Preferencias" class="b2 col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
                 <div class="col-11 col-sm-8 col-lg-7">
-                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
-                        <option value="1">Micro empresa</option>
-                        <option value="2">Pequeña empresa</option>
-                        <option value="3">Mediana empresa</option>
-                        <option value="4">Gran empresa</option>
+                    <select class=" b3 form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="tamEmp" [(ngModel)]="tamEmp" name="tamEmp">
+                        <option selected>Escoja...</option>
+                        <option value="Micro empresa">Micro empresa</option>
+                        <option value="Pequeña empresa">Pequeña empresa</option>
+                        <option value="Mediana empresa">Mediana empresa</option>
+                        <option value="Gran empresa">Gran empresa</option>
                     </select>
                 </div>
+                <button type="button" class="btn btn-info b6" (click)="addPref('Tamaño empresa')">Agregar</button>
             </div>
             <div class="form-group row">
                 <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
                 <div class="col-11 col-sm-8 col-lg-7">
-                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="sector" [(ngModel)]="sector" name="sector">
+                        <option selected>Escoja...</option>
                         <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
                         
                     </select>
                 </div>
+                <button type="button" class="btn btn-info" (click)="addPref('Sector')">Agregar</button>
             </div>
-            <div class="form-group row">
-                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Ubicación</label>
-                <div class="col-11 col-sm-8 col-lg-7">
-                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
+            <div class="form-group row b2">
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">País</label>
+                <div class="col-11 col-sm-8 col-lg-7 b1">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="pais" name="pais" [(ngModel)]="pais" >
+                        <option selected>Escoja...</option>
                         <option *ngFor="let item of ubicaciones" [value]="item">{{item}}</option>
                     </select>
+                    
                 </div>
+                
             </div>
+            <div class="form-group row">
+                <label for="ciudad" class="col-auto col-sm-3 col-form-label text-right">Ciudad</label>
+                <div class="col-11 col-sm-8 col-lg-7">
+                    <input class="form-control" type="text" name="ciudad" [(ngModel)]="ciudad" placeholder="Ingrese una ciudad del país que selecciono anteriormente" id="ciudad">
+                </div>
+                <button type="button" class="btn btn-info" (click)="addPrefUbicacion()">Agregar</button>
+            </div>
+
+            <!-- prueba-->
+            <div class="container mb-3">
+                <div class="row">
+                  <div class="col align-self-start">
+                    
+                  </div>
+                  <div class="col-7 align-self-center b4">
+                    <div class="col  b1">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col-2">Preferencia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of preferencias ; let i = index">
+        
+                                        <td class="">{{item.tipo}}</td>
+                                        <td class="">{{item.preferencia}}</td>
+                                        <td class="">
+                                           
+                                            <i (click)="deletePref(i)" class="far  fa-trash-alt"></i>
+                                        </td>
+        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col align-self-end">
+                    
+                  </div>
+                </div>
+              </div>
+            <!-- prueba-->
+
+            
         </div>
 
 
@@ -117,7 +169,7 @@
                 <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
                 <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
+                        <option selected>Escoja...</option>
                         <option value="1">Micro empresa</option>
                         <option value="2">Pequeña empresa</option>
                         <option value="3">Mediana empresa</option>
@@ -129,7 +181,7 @@
                 <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Cargo en la empresa</label>
                 <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
+                        <option selected>Escoja...</option>
                         <option *ngFor="let item of cargos" [value]="item">{{item}}</option>
                     </select>
                 </div>
@@ -138,7 +190,7 @@
                 <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Sector económico</label>
                 <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="Preferencias">
-                        <option selected>Choose...</option>
+                        <option selected>Escoja...</option>
                         <option *ngFor="let item of sectores" [value]="item">{{item}}</option>
                         
                     </select>
@@ -164,11 +216,11 @@
             <div class="form-group row">
                 <label for="nombreEmpr" class="col-auto col-sm-3 col-form-label text-right">Nombre actividad</label>
                 <div class="col-11 col-sm-8 col-lg-7">
-                    <input class="form-control" type="text" placeholder="Ingrese el nombre de la empresa" id="nombreEmpr">
+                    <input class="form-control" type="text" placeholder="Actividad que desarrolla" id="nombreEmpr">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Sector" class="col-auto col-sm-3 col-form-label text-right">Descripción</label>
+                <label for="Sector" class="col-auto col-sm-3 col-form-label text-right" placeholder="Describa brevemente la actividad que desarrolla">Descripción</label>
                 <div class="input-groupcol-11 col-sm-8 col-lg-7 ">
                     <textarea class="form-control" aria-label="With textarea"></textarea>
                   </div>

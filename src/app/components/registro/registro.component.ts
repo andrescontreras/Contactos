@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Preferencia } from '../../clases/preferencia'; 
 
 @Component({
   selector: 'app-registro',
@@ -14,6 +15,18 @@ export class RegistroComponent implements OnInit {
   theCheckbox1 = false;
   theCheckbox2 = false;
 
+  tamEmp :string = "Escoja...";
+  sector: string = "Escoja...";
+  pais:string = "Escoja...";
+  ciudad:string = "";
+
+  preferencias: Preferencia[] = [
+    new Preferencia("Sector","Textil"),
+    new Preferencia("Sector", "Salud"),
+    new Preferencia("Tamaño empresa", "Mediana empresa")
+
+  ];
+
   @ViewChild('btnClose') btnClose :ElementRef;
 
   sectores: string[] = 
@@ -25,48 +38,34 @@ export class RegistroComponent implements OnInit {
   "	Información y comunicaciones",
   "Financiaro y de seguros",
   "Inmobiliario",
-  "Educacion",
+  "Educación",
   "Salud",
   "Entretenimiento"
   ];
 
   ubicaciones: string[] =
   [
-    "Internacional:",
-    "  - Argentina",
-    "  - Bolivia",
-    "  - Brasil",
-    "  - Chile",
-    "  - Ecuador",
-    "  - Paraguay",
-    "  - Perú",
-    "  - Uruguay",
-    "  - Venezuela",
-    "  - México",
-    "  - Puerto Rico",
-    "  - etc",
-    "Nacional: ",
-    "  - Amazonas",
-    "  - Antioquia",
-    "  - Arauca",
-    "  - Atlántico",
-    "  - Bolívar",
-    "  - Boyacá",
-    "  - Caldas",
-    "  - Casanare",
-    "  - Cesar",
-    "  - Cundinamarca",
-    "  - Huila",
-    "  - Meta",
-    "  - Nariño",
-    "  - etc",
+    "Argentina",
+    "Bolivia",
+    "Brasil",
+    "Chile",
+    "Colombia",
+    "Costa Rica",
+    "Ecuador",
+    "Paraguay",
+    "Perú",
+    "Uruguay",
+    "Venezuela",
+    "México",
+    "Puerto Rico",
+    "etc",
   ];
 
   cargos: string[] =
   [
     "Abogado",
     "Administrador",
-    "	Analista Central de Presupuesto",
+    "Analista Central de Presupuesto",
     "Analista de Higiene y Seguridad Industrial",
     "Analista de Presupuesto",
     "Analista Financiero",
@@ -118,5 +117,28 @@ export class RegistroComponent implements OnInit {
     this.btnClose.nativeElement.click();
   }
 
+  addPref(tipo:string)
+  {
+    if(tipo == "Sector")
+    {
+      this.preferencias.push(new Preferencia(tipo, this.sector));
+    }
+    else{
+      this.preferencias.push(new Preferencia(tipo, this.tamEmp));
+    }
+
+  }
+
+  addPrefUbicacion()
+  {
+    //var  Preferencia = pais+"-"+ciudad;
+    this.preferencias.push(new Preferencia("ubicacion", this.pais+"-"+this.ciudad));
+  }
+
+  deletePref(i)
+  {
+    console.log("contacto eliminado ES: ",i);
+    this.preferencias.splice(i,1)
+  }
 
 }

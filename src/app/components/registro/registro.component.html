@@ -46,10 +46,10 @@
         <div id="Preferencias" class="borde">
             <h4>Preferencias</h4>
 
-            <div class="form-group row b1">
-                <label for="Preferencias" class="b2 col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
+            <div class="form-group row">
+                <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Tamaño empresa</label>
                 <div class="col-11 col-sm-8 col-lg-7">
-                    <select class=" b3 form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="tamEmp" [(ngModel)]="tamEmp" name="tamEmp">
+                    <select class=" form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="tamEmp" [(ngModel)]="tamEmp" name="tamEmp">
                         <option selected>Escoja...</option>
                         <option value="Micro empresa">Micro empresa</option>
                         <option value="Pequeña empresa">Pequeña empresa</option>
@@ -57,7 +57,7 @@
                         <option value="Gran empresa">Gran empresa</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-info b6" (click)="addPref('Tamaño empresa')">Agregar</button>
+                <button type="button" class="btn btn-info" (click)="addPref('Tamaño empresa')">Agregar</button>
             </div>
             <div class="form-group row">
                 <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">Sector</label>
@@ -70,9 +70,9 @@
                 </div>
                 <button type="button" class="btn btn-info" (click)="addPref('Sector')">Agregar</button>
             </div>
-            <div class="form-group row b2">
+            <div class="form-group row">
                 <label for="Preferencias" class="col-auto col-sm-3 col-form-label text-right">País</label>
-                <div class="col-11 col-sm-8 col-lg-7 b1">
+                <div class="col-11 col-sm-8 col-lg-7">
                     <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="pais" name="pais" [(ngModel)]="pais" >
                         <option selected>Escoja...</option>
                         <option *ngFor="let item of ubicaciones" [value]="item">{{item}}</option>
@@ -95,8 +95,8 @@
                   <div class="col align-self-start">
                     
                   </div>
-                  <div class="col-7 align-self-center b4">
-                    <div class="col  b1">
+                  <div class="col-7 align-self-center">
+                    <div class="col">
                         <div class="table-responsive">
                             <table class="table table-sm">
                                 <thead>

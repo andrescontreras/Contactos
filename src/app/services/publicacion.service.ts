@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class PublicacionService{
 
-  restItemsUrl = 'http://afcserver.tk:8081/api/publicacion';
+  restItemsUrl = 'https://as-networking-fe-api.azurewebsites.net/api/publicacion';
   restItems: Observable<Publicacion[]>;
   
   constructor(private http: HttpClient) { 
